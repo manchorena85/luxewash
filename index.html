@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LuxeWash – Premium Car Detailing & Ceramic Coating in Broward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C; --gold-light: #E8C97A; --gold-dim: #8a6f30;
+  --black: #0a0a0a; --dark: #111; --dark2: #1a1a1a; --dark3: #222;
+  --white: #f5f3ee; --grey: #888;
+  --fd: 'Cormorant Garamond', serif; --fb: 'Montserrat', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--fb);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 5%;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);animation:fadeDown .8s ease both}
+.nav-logo{font-family:var(--fd);font-size:1.6rem;font-weight:700;letter-spacing:.15em;color:var(--gold);text-transform:uppercase}
+.nav-logo span{color:var(--white);font-weight:300}
+nav a.nav-cta{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:.65rem 1.5rem;text-decoration:none;transition:background .3s,transform .2s}
+nav a.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 5% 80px;position:relative;overflow:hidden}
+.hero-bg-img{position:absolute;inset:0;background:url('https://res.cloudinary.com/dzwb8siax/image/upload/v1772290959/img_hero_ubr0yq.jpg') center 30%/cover no-repeat;filter:brightness(.25)}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,10,10,.6) 0%,rgba(10,10,6,.4) 60%,rgba(10,10,10,.85) 100%)}
+.hero-eyebrow{font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;position:relative;display:flex;align-items:center;gap:1rem;animation:fadeUp .8s .2s ease both}
+.hero-eyebrow::before{content:'';display:block;width:40px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--fd);font-size:clamp(3.5rem,8vw,7rem);font-weight:300;line-height:1;position:relative;animation:fadeUp .8s .35s ease both}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:600}
+.hero-sub{font-size:clamp(.9rem,1.5vw,1.05rem);font-weight:300;color:rgba(245,243,238,.75);max-width:480px;line-height:1.75;margin-top:1.8rem;position:relative;animation:fadeUp .8s .5s ease both}
+.hero-ctas{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;position:relative;animation:fadeUp .8s .65s ease both}
+
+.btn-primary{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2rem;background:var(--gold);color:var(--black);font-family:var(--fb);font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .2s,box-shadow .3s;box-shadow:0 0 40px rgba(201,168,76,.3)}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 0 60px rgba(201,168,76,.45)}
+.btn-secondary{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2rem;border:1px solid rgba(201,168,76,.5);color:var(--gold);font-family:var(--fb);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:border-color .3s,background .3s,transform .2s}
+.btn-secondary:hover{border-color:var(--gold);background:rgba(201,168,76,.08);transform:translateY(-2px)}
+
+.trust-bar{background:var(--dark2);border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15);padding:1.2rem 5%;display:flex;justify-content:center;flex-wrap:wrap;gap:2rem 4rem}
+.trust-item{display:flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,238,.7);font-weight:500}
+.trust-item .icon{color:var(--gold)}
+
+.urgency{background:var(--dark2);border-top:1px solid rgba(201,168,76,.2);border-bottom:1px solid rgba(201,168,76,.2);padding:2.5rem 5%;text-align:center}
+.urgency-inner{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+.urgency-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);padding:.5rem 1.2rem;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.pulse{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 1.5s infinite;flex-shrink:0}
+.urgency-text{font-family:var(--fd);font-size:1.5rem;font-weight:300}
+.urgency-text strong{color:var(--gold);font-weight:700}
+
+section{padding:100px 5%}
+.section-label{font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.section-label::after{content:'';flex:1;max-width:60px;height:1px;background:var(--gold)}
+.section-title{font-family:var(--fd);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;line-height:1.1}
+.section-title em{font-style:italic;color:var(--gold);font-weight:600}
+
+/* SERVICES */
+.services{background:var(--dark)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;margin-top:4rem}
+.service-card{border:1px solid rgba(201,168,76,.08);transition:border-color .4s,transform .3s;overflow:hidden}
+.service-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-4px)}
+.service-card::after{content:'';display:block;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.service-card:hover::after{transform:scaleX(1)}
+.service-img-link{display:block;overflow:hidden;position:relative;text-decoration:none}
+.service-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:brightness(.8);transition:filter .4s,transform .4s}
+.service-card:hover .service-img{filter:brightness(1);transform:scale(1.04)}
+.service-img-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);display:flex;align-items:center;justify-content:center;font-family:var(--fb);font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:transparent;transition:background .35s,color .35s}
+.service-card:hover .service-img-overlay{background:rgba(10,10,10,.5);color:var(--gold)}
+.service-body{background:var(--dark2);padding:2rem 2rem 2.5rem}
+.service-number{font-family:var(--fd);font-size:2.5rem;color:rgba(201,168,76,.12);font-weight:700;line-height:1;margin-bottom:.5rem}
+.service-name{font-family:var(--fd);font-size:1.6rem;font-weight:600;margin-bottom:.7rem}
+.service-desc{font-size:.8rem;line-height:1.75;color:rgba(245,243,238,.55);font-weight:300;margin-bottom:1.2rem}
+.service-price{font-family:var(--fd);font-size:1.4rem;color:var(--gold);font-weight:600}
+.service-price span{font-family:var(--fb);font-size:.65rem;letter-spacing:.1em;color:var(--grey);font-weight:400;margin-left:.3rem;text-transform:uppercase}
+
+/* GALLERY */
+.gallery{background:var(--black)}
+.gallery-intro{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:3rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.gallery-card{position:relative;overflow:hidden;border:1px solid rgba(201,168,76,.08);transition:border-color .3s}
+.gallery-card:first-child{grid-column:span 2}
+.gallery-card:hover{border-color:rgba(201,168,76,.4)}
+.gallery-card img{width:100%;height:100%;min-height:220px;object-fit:cover;display:block;transition:transform .5s,filter .4s;filter:brightness(.85)}
+.gallery-card:hover img{transform:scale(1.05);filter:brightness(1)}
+.gallery-label{position:absolute;bottom:0;left:0;background:rgba(201,168,76,.92);color:var(--black);font-size:.55rem;letter-spacing:.2em;padding:.3rem .9rem;font-weight:700;text-transform:uppercase}
+
+/* PROCESS */
+.process{background:var(--dark)}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:4rem;position:relative}
+.process-steps::before{content:'';position:absolute;top:2.5rem;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
+.step{padding:0 2rem;text-align:center}
+.step-num{width:5rem;height:5rem;border:1px solid rgba(201,168,76,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.8rem;color:var(--gold);font-weight:600;margin:0 auto 1.5rem;background:var(--dark);position:relative;z-index:1;transition:background .3s,border-color .3s}
+.step:hover .step-num{background:rgba(201,168,76,.1);border-color:var(--gold)}
+.step-title{font-family:var(--fd);font-size:1.3rem;font-weight:600;margin-bottom:.8rem}
+.step-desc{font-size:.78rem;line-height:1.7;color:rgba(245,243,238,.5);font-weight:300}
+
+/* PRICING */
+.pricing{background:var(--black)}
+.pricing-sub{font-size:.85rem;color:rgba(245,243,238,.5);margin-top:1rem;font-weight:300;max-width:500px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;margin-top:3.5rem}
+.price-card{background:var(--dark2);border:1px solid rgba(201,168,76,.08);padding:2.2rem 2rem 2.5rem;position:relative;transition:border-color .3s,transform .3s,background .3s;display:flex;flex-direction:column}
+.price-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-4px);background:#1c1a14}
+.price-card--featured{border-color:rgba(201,168,76,.3);background:#1a1810}
+.price-card--dark{background:#0d0d0b;border-color:rgba(201,168,76,.2)}
+.price-badge{display:inline-block;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:.25rem .8rem;margin-bottom:1rem;background:rgba(201,168,76,.15);color:var(--gold);border:1px solid rgba(201,168,76,.3);align-self:flex-start}
+.price-badge--green{background:rgba(34,197,94,.1);color:#22c55e;border-color:rgba(34,197,94,.3)}
+.price-tag{font-family:var(--fd);font-size:2.2rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:.5rem}
+.price-name{font-family:var(--fd);font-size:1.4rem;font-weight:600;margin-bottom:.8rem;color:var(--white)}
+.price-desc{font-size:.78rem;line-height:1.65;color:rgba(245,243,238,.5);font-weight:300;margin-bottom:1.2rem}
+.price-features{list-style:none;margin-bottom:2rem;flex:1}
+.price-features li{font-size:.75rem;color:rgba(245,243,238,.65);padding:.4rem 0 .4rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.05);font-weight:300;position:relative}
+.price-features li::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:.5rem;top:.55rem}
+.btn-price{display:block;text-align:center;padding:.85rem 1.5rem;border:1px solid rgba(201,168,76,.4);color:var(--gold);font-family:var(--fb);font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .3s,border-color .3s,color .3s,transform .2s;margin-top:auto}
+.btn-price:hover{background:rgba(201,168,76,.1);border-color:var(--gold);transform:translateY(-1px)}
+.btn-price--gold{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.btn-price--gold:hover{background:var(--gold-light);border-color:var(--gold-light);color:var(--black)}
+
+/* REVIEWS */
+.reviews{background:var(--dark)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:4rem}
+.review-card{background:var(--dark2);border:1px solid rgba(201,168,76,.1);padding:2.5rem;transition:border-color .3s,transform .3s}
+.review-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-3px)}
+.stars{color:var(--gold);font-size:.9rem;letter-spacing:.1em;margin-bottom:1.2rem}
+.review-text{font-size:.85rem;line-height:1.75;color:rgba(245,243,238,.7);font-weight:300;font-style:italic;margin-bottom:1.5rem}
+.review-author{display:flex;align-items:center;gap:.8rem}
+.review-avatar{width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.1rem;color:var(--black);font-weight:700;flex-shrink:0}
+.review-name{font-size:.8rem;font-weight:600;letter-spacing:.05em}
+.review-meta{font-size:.65rem;color:var(--grey);margin-top:.1rem}
+.review-source{font-size:.6rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
+
+/* CTA */
+.cta-section{background:var(--dark2);text-align:center;padding:120px 5%;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(201,168,76,.07) 0%,transparent 70%)}
+.cta-desc{font-size:.9rem;color:rgba(245,243,238,.5);max-width:500px;margin:1.5rem auto 0;line-height:1.75;font-weight:300;position:relative}
+.contact-bar{display:flex;justify-content:center;gap:3rem;margin-top:3rem;flex-wrap:wrap}
+.contact-item{display:flex;align-items:center;gap:.6rem;font-size:.75rem;color:rgba(245,243,238,.5)}
+.contact-item .icon{color:var(--gold)}
+
+footer{background:var(--black);border-top:1px solid rgba(201,168,76,.1);padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:var(--fd);font-size:1.2rem;font-weight:700;letter-spacing:.15em;color:var(--gold);text-transform:uppercase}
+.footer-copy{font-size:.65rem;color:var(--grey);letter-spacing:.08em}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+@media(max-width:900px){.pricing-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.gallery-grid{grid-template-columns:1fr 1fr}.gallery-card:first-child{grid-column:span 2}.process-steps{gap:3rem}.process-steps::before{display:none}footer{flex-direction:column;text-align:center}}
+@media(max-width:560px){.pricing-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.trust-bar{gap:1rem 2rem}.gallery-grid{grid-template-columns:1fr}.gallery-card:first-child{grid-column:span 1}.services-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Luxe<span>Wash</span></div>
+  <a class="nav-cta" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services" target="_blank">Book Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-eyebrow">Broward County's Premium Mobile Detailers</div>
+  <h1>Your Car.<br><em>Flawless.</em><br>At Your Door.</h1>
+  <p class="hero-sub">Professional mobile car detailing & ceramic coating that comes to you — home or office. Same-day appointments available, 7 days a week.</p>
+  <div class="hero-ctas">
+    <a class="btn-primary" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services" target="_blank">✦ Book Your Detail</a>
+    <a class="btn-secondary" href="tel:3054139955">☎ (305) 413-9955</a>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item"><span class="icon">★</span> 5-Star Google Reviews</div>
+  <div class="trust-item"><span class="icon">⚡</span> Same-Day Appointments</div>
+  <div class="trust-item"><span class="icon">🛡</span> 24-Hour Rain Warranty</div>
+  <div class="trust-item"><span class="icon">💧</span> We Bring Water & Power</div>
+  <div class="trust-item"><span class="icon">✓</span> 10+ Years in Broward</div>
+</div>
+
+<div class="urgency">
+  <div class="urgency-inner">
+    <div class="urgency-badge"><div class="pulse"></div> Live Availability</div>
+    <p class="urgency-text">Only <strong id="spots">3 spots</strong> remaining this week — secure yours.</p>
+    <a class="btn-primary" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services" target="_blank">Reserve My Spot →</a>
+  </div>
+</div>
+
+<section class="services">
+  <div class="section-label">Our Services</div>
+  <h2 class="section-title reveal">Our Services.<br><em>One Standard.</em></h2>
+  <div class="services-grid">
+
+    <div class="service-card reveal reveal-delay-1">
+      <a href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/OYZQAZA6DL7BOMTZQPXLCIXM" target="_blank" class="service-img-link">
+        <img class="service-img" src="https://res.cloudinary.com/dzwb8siax/image/upload/v1772290959/img_ferrari_interior_lk2vzg.jpg" alt="Full Detailing">
+        <div class="service-img-overlay">Book Now →</div>
+      </a>
+      <div class="service-body">
+        <div class="service-number">01</div>
+        <div class="service-name">Full Detailing</div>
+        <p class="service-desc">Complete interior & exterior treatment. Deep-clean every surface — carpets, leather, upholstery, paint, wheels, and glass — leaving your car showroom-fresh.</p>
+        <div class="service-price">From $100 <span>/ vehicle</span></div>
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <a href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/RHUV2SAB5KNPEBZ355N3UGCO" target="_blank" class="service-img-link">
+        <img class="service-img" src="https://res.cloudinary.com/dzwb8siax/image/upload/v1772290959/img_ceramic_facszi.jpg" alt="Ceramic Coating">
+        <div class="service-img-overlay">Book Now →</div>
+      </a>
+      <div class="service-body">
+        <div class="service-number">02</div>
+        <div class="service-name">Ceramic Coating</div>
+        <p class="service-desc">Long-term paint protection defending against UV rays, water spots, and Florida's harsh climate. Mirror-like, swirl-free finish that lasts years.</p>
+        <div class="service-price">From $800 <span>/ vehicle</span></div>
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-3">
+      <a href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/VXGPSZYSDX56SHRYW6OI6MVO" target="_blank" class="service-img-link">
+        <img class="service-img" src="https://res.cloudinary.com/dzwb8siax/image/upload/v1772290959/img_interior_clean_b3sq6k.jpg" alt="Interior Deep Clean">
+        <div class="service-img-overlay">Book Now →</div>
+      </a>
+      <div class="service-body">
+        <div class="service-number">03</div>
+        <div class="service-name">Interior Deep Clean</div>
+        <p class="service-desc">Full steam clean, odor elimination, leather conditioning, and upholstery shampoo. Brand-new interior feel, no matter the condition.</p>
+        <div class="service-price">From $250 <span>/ vehicle</span></div>
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-4">
+      <a href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/TVHR67RHQEMKA7WRMGJNHMIV" target="_blank" class="service-img-link">
+        <img class="service-img" src="https://res.cloudinary.com/dzwb8siax/image/upload/v1772290959/img_detailing_work_ozeves.jpg" alt="Paint Correction">
+        <div class="service-img-overlay">Book Now →</div>
+      </a>
+      <div class="service-body">
+        <div class="service-number">04</div>
+        <div class="service-name">Paint Correction</div>
+        <p class="service-desc">Remove swirl marks, scratches, water spots, and oxidation to restore your paint to a flawless, mirror-like factory finish.</p>
+        <div class="service-price">From $400 <span>/ vehicle</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="gallery-intro">
+    <div>
+      <div class="section-label reveal">Our Work</div>
+      <h2 class="section-title reveal">We Work on<br><em>Dream Cars.</em></h2>
+    </div>
+    <a class="btn-secondary reveal" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services" target="_blank">Book Now →</a>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-card reveal">
+      <img src="https://res.cloudinary.com/dzwb8siax/image/upload/v1772290959/img_lamborghini_oyiwdr.jpg" alt="Lamborghini detailing Broward">
+      <div class="gallery-label">Lamborghini · Full Detail</div>
+    </div>
+    <div class="gallery-card reveal reveal-delay-1">
+      <img src="https://res.cloudinary.com/dzwb8siax/image/upload/v1772290959/img_ferrari_exterior_nmvcuk.jpg" alt="Ferrari detailing">
+      <div class="gallery-label">Ferrari · Interior Detail</div>
+    </div>
+    <div class="gallery-card reveal reveal-delay-2">
+      <img src="https://res.cloudinary.com/dzwb8siax/image/upload/v1772290959/img_detailing_work_ozeves.jpg" alt="Exterior detailing">
+      <div class="gallery-label">Exterior · Paint Correction</div>
+    </div>
+    <div class="gallery-card reveal reveal-delay-3">
+      <img src="https://res.cloudinary.com/dzwb8siax/image/upload/v1772290959/img_interior_clean_b3sq6k.jpg" alt="Interior detailing Weston">
+      <div class="gallery-label">Interior · Deep Clean</div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="section-label reveal">How It Works</div>
+  <h2 class="section-title reveal">3 Steps to a<br><em>Perfect Detail.</em></h2>
+  <div class="process-steps">
+    <div class="step reveal reveal-delay-1">
+      <div class="step-num">01</div>
+      <div class="step-title">Book Online</div>
+      <p class="step-desc">Choose your service, pick your date and time. Same-day slots often available. We confirm instantly.</p>
+    </div>
+    <div class="step reveal reveal-delay-2">
+      <div class="step-num">02</div>
+      <div class="step-title">We Come to You</div>
+      <p class="step-desc">Our certified team arrives at your home or office with their own water and power — zero use of your utilities.</p>
+    </div>
+    <div class="step reveal reveal-delay-3">
+      <div class="step-num">03</div>
+      <div class="step-title">Drive Away Proud</div>
+      <p class="step-desc">We don't leave until you're 100% satisfied. Backed by our 24-hour rain warranty and satisfaction guarantee.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="section-label reveal">Transparent Pricing</div>
+  <h2 class="section-title reveal">Choose Your<br><em>Service.</em></h2>
+  <p class="pricing-sub reveal">All prices vary based on vehicle size and condition. Every service includes our satisfaction guarantee.</p>
+  <div class="pricing-grid">
+
+    <div class="price-card reveal reveal-delay-1">
+      <div class="price-tag">$70</div>
+      <div class="price-name">Exterior Wash</div>
+      <p class="price-desc">Professional exterior wash removing surface dirt, road grime, and light buildup to restore your vehicle's shine.</p>
+      <ul class="price-features">
+        <li>100% hand wash + towel dry</li><li>Deep tire & rim cleaning</li><li>Bug & leaf removal</li><li>Inner fender & gas cap cleaning</li>
+      </ul>
+      <a class="btn-price" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/V4UB7CH7XILUF6OAGK7J3U3Q" target="_blank">Book Now →</a>
+    </div>
+
+    <div class="price-card reveal reveal-delay-2">
+      <div class="price-tag">$100 – $150</div>
+      <div class="price-name">Basic Detailing</div>
+      <p class="price-desc">Interior & exterior care for everyday maintenance.</p>
+      <ul class="price-features">
+        <li>Full glass cleaning</li><li>Dashboard & door panels</li><li>Central console deep cleaning</li><li>Vacuum (pet hair/sand removal)</li><li>Spray wax + tire & rim detail</li>
+      </ul>
+      <a class="btn-price" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/J3ORWXDUM2G7NS6CAHGWD5EK" target="_blank">Book Now →</a>
+    </div>
+
+    <div class="price-card reveal reveal-delay-3">
+      <div class="price-tag">$150 – $250</div>
+      <div class="price-name">Wash & Wax</div>
+      <p class="price-desc">Clean, protect, and enhance your vehicle's paint — leaving a smooth, glossy finish.</p>
+      <ul class="price-features">
+        <li>100% hand wash + towel dry</li><li>Deep tire & rim cleaning</li><li>Bug & leaf removal</li><li>Professional wax application</li>
+      </ul>
+      <a class="btn-price" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/EXSZ3UI4C7YYHGSCWSSNFSIW" target="_blank">Book Now →</a>
+    </div>
+
+    <div class="price-card reveal reveal-delay-1">
+      <div class="price-tag">$200 – $300</div>
+      <div class="price-name">Full Interior</div>
+      <p class="price-desc">Full shampoo and extraction cleaning of carpets, seats, and upholstery.</p>
+      <ul class="price-features">
+        <li>Seat shampooing (extractor or steam)</li><li>Carpet & upholstery deep clean</li><li>Dashboard, panels & console</li><li>Vacuum + air freshener</li>
+      </ul>
+      <a class="btn-price" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/VXGPSZYSDX56SHRYW6OI6MVO" target="_blank">Book Now →</a>
+    </div>
+
+    <div class="price-card price-card--featured reveal reveal-delay-2">
+      <div class="price-badge">Most Popular</div>
+      <div class="price-tag">$250 – $350</div>
+      <div class="price-name">Full Detailing</div>
+      <p class="price-desc">Complete inside-out treatment — our most popular service.</p>
+      <ul class="price-features">
+        <li>Ceiling & visors cleaning</li><li>Seat shampooing (extractor or steam)</li><li>All interior surfaces deep cleaned</li><li>Vacuum + air freshener</li><li>100% hand wash + spray wax</li>
+      </ul>
+      <a class="btn-price btn-price--gold" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/OYZQAZA6DL7BOMTZQPXLCIXM" target="_blank">Book Now →</a>
+    </div>
+
+    <div class="price-card reveal reveal-delay-3">
+      <div class="price-tag">$300 – $400</div>
+      <div class="price-name">Premium Detailing</div>
+      <p class="price-desc">Everything in Full Detailing plus engine bay cleaning.</p>
+      <ul class="price-features">
+        <li>Everything in Full Detailing</li><li>Engine bay cleaning</li><li>Ceiling & visors cleaning</li><li>Seat shampooing</li>
+      </ul>
+      <a class="btn-price" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/4QTYLWLVP7SYSVCIQPJDTAEG" target="_blank">Book Now →</a>
+    </div>
+
+    <div class="price-card reveal reveal-delay-1">
+      <div class="price-tag">$400</div>
+      <div class="price-name">Paint Correction</div>
+      <p class="price-desc">Restore your car's paint to its original brilliance — removing swirls, water spots, and oxidation.</p>
+      <ul class="price-features">
+        <li>Swirl mark removal</li><li>Water spot elimination</li><li>Oxidation treatment</li><li>Mirror-like finish restored</li>
+      </ul>
+      <a class="btn-price" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/TVHR67RHQEMKA7WRMGJNHMIV" target="_blank">Book Now →</a>
+    </div>
+
+    <div class="price-card price-card--dark reveal reveal-delay-2">
+      <div class="price-badge">Premium Protection</div>
+      <div class="price-tag">$800 – $1,300</div>
+      <div class="price-name">Ceramic Coating</div>
+      <p class="price-desc">Permanent bumper-to-bumper protection against UV, water, and Florida's harsh climate.</p>
+      <ul class="price-features">
+        <li>2 to 5 years protection</li><li>UV ray defense</li><li>Hydrophobic water beading</li><li>Deep gloss mirror finish</li><li>Includes paint correction prep</li>
+      </ul>
+      <a class="btn-price btn-price--gold" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/RHUV2SAB5KNPEBZ355N3UGCO" target="_blank">Book Now →</a>
+    </div>
+
+    <div class="price-card reveal reveal-delay-3">
+      <div class="price-badge price-badge--green">Best Value</div>
+      <div class="price-tag">$180<span style="font-size:1rem;color:var(--grey);font-family:var(--fb);font-weight:400">/mo</span></div>
+      <div class="price-name">Membership</div>
+      <p class="price-desc">Weekly, bi-weekly, or monthly care for your vehicle — always showroom-ready.</p>
+      <ul class="price-features">
+        <li>Flexible schedule</li><li>Priority booking</li><li>Interior & exterior included</li><li>Dedicated detailer</li>
+      </ul>
+      <a class="btn-price btn-price--gold" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services/PZ2XQSBW34MPRMTJ4D4AHOSU" target="_blank">Join Now →</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-label reveal">5-Star Reviews</div>
+  <h2 class="section-title reveal">What Broward<br><em>Drivers Say.</em></h2>
+  <div class="reviews-grid">
+    <div class="review-card reveal reveal-delay-1">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"I've tried several detailing services in Broward and LuxeWash is on another level. My BMW looks better than when I bought it. The ceramic coating was absolutely worth it — water just beads right off."</p>
+      <div class="review-author"><div class="review-avatar">M</div><div><div class="review-name">Michael R.</div><div class="review-meta">Weston, FL</div><div class="review-source">Google Review</div></div></div>
+    </div>
+    <div class="review-card reveal reveal-delay-2">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"The convenience alone is worth 5 stars — they came to my office and had my SUV looking incredible by the time I finished my meetings. The interior deep clean was spotless."</p>
+      <div class="review-author"><div class="review-avatar">S</div><div><div class="review-name">Sandra L.</div><div class="review-meta">Pembroke Pines, FL</div><div class="review-source">Google Review</div></div></div>
+    </div>
+    <div class="review-card reveal reveal-delay-3">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Called in the morning, they were here by noon. Paint correction on my Porsche turned out flawless. These guys are true professionals who clearly take pride in their work."</p>
+      <div class="review-author"><div class="review-avatar">J</div><div><div class="review-name">James T.</div><div class="review-meta">Fort Lauderdale, FL</div><div class="review-source">Google Review</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-label" style="justify-content:center">Ready to Book?</div>
+  <h2 class="section-title reveal">Give Your Car the<br><em>Treatment It Deserves.</em></h2>
+  <p class="cta-desc reveal">Same-day appointments available. We come fully equipped to your home or office. Serving all of Broward County.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap;position:relative">
+    <a class="btn-primary" href="https://book.squareup.com/appointments/cbjhr6q4qkc9ht/location/L3E7YSTP30RBY/services" target="_blank">✦ Book My Appointment</a>
+    <a class="btn-secondary" href="tel:3054139955">☎ (305) 413-9955</a>
+  </div>
+  <div class="contact-bar">
+    <div class="contact-item"><span class="icon">📍</span> Weston, FL — All of Broward County</div>
+    <div class="contact-item"><span class="icon">📧</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="177e797178577b626f72747665603974787a">[email&#160;protected]</a></div>
+    <div class="contact-item"><span class="icon">🕐</span> Open 7 Days a Week</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">LuxeWash</div>
+  <div class="footer-copy">© 2025 LuxeWash Car Detailing. All rights reserved.</div>
+  <div class="footer-copy">Broward County, Florida</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const obs = new IntersectionObserver(e => e.forEach(en => { if(en.isIntersecting) en.target.classList.
